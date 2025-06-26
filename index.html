@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance International Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A6D92',
+                        secondary: '#00A3C8',
+                        orange: '#F9B233',
+                        dark: '#202124',
+                        light: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-8 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">Advance International Hospital</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="doctor.html">Find a Doctor</a>
+                <a href="news.html">News & Events</a>
+                <a href="#">Contact</a>
+                <a href="#" class="bg-orange text-white px-4 py-2 rounded-md hover:bg-amber-600 transition-colors items-center">Book Appointment</a>
+            </div>
+            <button class="md:hidden text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+<section class="relative py-20 px-6 h-[500px] md:h-[600px] overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="hospital-image.jpg" alt="Hospital" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div> <!-- Dark overlay for better text contrast -->
+    </div>
+    
+    <!-- Content Container -->
+    <div class="container mx-auto relative z-10 h-full flex items-center">
+        <div class="text-white max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Health, Our Priority</h1>
+            <p class="text-lg md:text-xl mb-8">Book appointments, explore services, and access world-class care in just a few clicks.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-orange text-white px-6 py-3 rounded-md hover:bg-amber-600 font-medium transition-colors">Book OPD Appointment</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-100 font-medium transition-colors">View Services</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Quick Links -->
+    <section class="py-16 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                    <div class="bg-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Book OPD</h3>
+                    <p class="text-gray-600">Consult your doctor online or in-person</p>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                    <div class="bg-secondary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Health Services</h3>
+                    <p class="text-gray-600">Explore diagnostic & specialty services</p>
+                </div>
+                
+                <div class="bg-purple-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                    <div class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Find a Doctor</h3>
+                    <p class="text-gray-600">Search specialists by name or department</p>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+                    <div class="bg-yellow-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Careers</h3>
+                    <p class="text-gray-600">View current openings and apply online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Our Departments</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive healthcare services with state-of-the-art facilities and expert medical professionals</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="Cardiology" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Cardiology</h3>
+                        <p class="text-gray-600 mb-4">Advanced heart care and treatment</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="Neurology" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Neurology</h3>
+                        <p class="text-gray-600 mb-4">Brain and nervous system care</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="Radiology" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Radiology</h3>
+                        <p class="text-gray-600 mb-4">Advanced imaging and diagnostics</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="Emergency" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Emergency</h3>
+                        <p class="text-gray-600 mb-4">24/7 emergency medical care</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-blue-50 font-medium">View All Departments</button>
+            </div>
+        </div>
+    </section>
+
+  <!-- Meet Our Doctors Section -->
+<section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Meet Our Doctors</h2>
+        <p class="mt-4 text-xl text-gray-600">Expert healthcare professionals dedicated to your wellbeing</p>
+    </div>
+    
+    <div class="grid gap-8 md:grid-cols-3">
+        <!-- Doctor 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center transition-transform duration-300 hover:scale-105">
+            <div class="h-64 bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+                     alt="Dr. John Smith" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <h3 class="text-2xl font-semibold text-gray-800">Dr. John Smith</h3>
+                <p class="text-lg text-blue-600 mt-2">Cardiologist</p>
+                <button class="mt-6 px-6 py-2 bg-orange text-white font-medium rounded-md hover:bg-amber-600 transition duration-300">
+                    Book Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Doctor 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center transition-transform duration-300 hover:scale-105">
+            <div class="h-64 bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+                     alt="Dr. Sarah Johnson" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <h3 class="text-2xl font-semibold text-gray-800">Dr. Sarah Johnson</h3>
+                <p class="text-lg text-blue-600 mt-2">Neurologist</p>
+                <button class="mt-6 px-6 py-2 bg-orange text-white font-medium rounded-md hover:bg-amber-600 transition duration-300">
+                    Book Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Doctor 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center transition-transform duration-300 hover:scale-105">
+            <div class="h-64 bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+                     alt="Dr. Michael Brown" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <h3 class="text-2xl font-semibold text-gray-800">Dr. Michael Brown</h3>
+                <p class="text-lg text-blue-600 mt-2">Emergency Medicine</p>
+                <button class="mt-6 px-6 py-2 bg-orange text-white font-medium rounded-md hover:bg-amber-600 transition duration-300">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- View All Doctors Button (Added this part) -->
+    <div class="text-center mt-10">
+        <button class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-blue-50 font-medium transition-colors">
+            View All Doctors
+        </button>
+    </div>
+</section>
+
+<!-- Latest News & Events Section -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Latest News & Events</h2>
+      <p class="mt-4 text-xl text-gray-600">Stay updated with our latest activities and health information</p>
+    </div>
+
+    <!-- News Cards Grid -->
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- News Card 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="h-48 bg-gray-200 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+               alt="Free Health Camp" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Free Health Camp</h3>
+          <p class="text-gray-600 mb-4">Join our monthly health screening camp for the community</p>
+          <a href="#" class="text-primary font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+
+      <!-- News Card 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="h-48 bg-gray-200 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+               alt="Medical Conference" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Medical Conference</h3>
+          <p class="text-gray-600 mb-4">Annual medical conference on latest healthcare innovations</p>
+          <a href="#" class="text-primary font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+
+      <!-- News Card 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="h-48 bg-gray-200 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+               alt="Health Tips" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Health Tips</h3>
+          <p class="text-gray-600 mb-4">Essential tips for maintaining a healthy lifestyle</p>
+          <a href="#" class="text-primary font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-10">
+      <button class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-blue-50 font-medium transition-colors">
+        View All News & Events
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Careers Section with White Text -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-primary"> <!-- Changed background to primary -->
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header with White Text -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">We're Hiring!</h2>
+      <p class="mt-4 text-xl text-white">Join our team of healthcare professionals making a difference in people's lives</p>
+    </div>
+
+    <!-- Job Listing Card -->
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto mb-10 text-center">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-2">Registered Nurse</h3>
+      <p class="text-gray-600 mb-6">ICU Department - Full Time Position</p>
+      <div class="flex justify-center">
+        <button class="bg-primary text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+          Apply Now
+        </button>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center">
+      <button class="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-primary font-medium transition-colors">
+        View All Vacancies
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">What Our Patients Say</h2>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+        <h3 class="text-xl font-semibold text-gray-800">Mary Wilson</h3>
+        <p class="text-gray-500 mb-4">Age 45</p>
+        <p class="text-gray-600 italic">"Excellent care and professional staff. The doctors were very attentive and thorough."</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+        <h3 class="text-xl font-semibold text-gray-800">Robert Davis</h3>
+        <p class="text-gray-500 mb-4">Age 52</p>
+        <p class="text-gray-600 italic">"State-of-the-art facilities and compassionate healthcare. Highly recommended!"</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+        <h3 class="text-xl font-semibold text-gray-800">Lisa Anderson</h3>
+        <p class="text-gray-500 mb-4">Age 38</p>
+        <p class="text-gray-600 italic">"Quick appointment booking and minimal waiting time. Great overall experience."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Full-width CTA Section -->
+<div class="w-full bg-primary text-white py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-2xl md:text-3xl font-bold mb-4">Get expert care when you need it</h3>
+    <p class="text-xl mb-6">Book your appointment today and experience world-class healthcare</p>
+    
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button class="bg-orange text-white px-6 py-3 rounded-md hover:bg-amber-600 font-medium transition-colors">
+        Book OPD
+      </button>
+      <button class="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-primary font-medium transition-colors">
+        Call Now +977-XXXXXXX
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white w-full">
+    <div class="mx-auto px-6 py-12 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Hospital Info -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Advance International Hospital</h3>
+                <p class="text-gray-300">Your Health, Our Priority. Providing world-class healthcare services with compassion and excellence.</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Find a Doctor</a></li>
+                </ul>
+            </div>
+            
+            <!-- Departments -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Departments</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cardiology</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Neurology</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Radiology</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Emergency</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                <address class="text-gray-300 not-italic">
+                    123 Medical Drive<br>
+                    Health City, HC 12345<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@advancehospital.com
+                </address>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 Advance International Hospital. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+  
+</body>
+</html>
