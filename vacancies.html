@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Openings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A6D92',
+                        secondary: '#00A3C8',
+                        orange: '#F9B233',
+                        dark: '#202124',
+                        light: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-8 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">Advance International Hospital</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="doctor.html">Find a Doctor</a>
+                <a href="news.html">News & Events</a>
+                <a href="contact.html">Contact</a>
+                <a href="appointment.html" class="bg-orange text-white px-4 py-2 rounded-md hover:bg-amber-600 transition-colors items-center">Book Appointment</a>
+            </div>
+            <button class="md:hidden text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+<section class="relative py-20 px-6 h-[500px] md:h-[600px] overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="hospital-image.jpg" alt="Hospital" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div> <!-- Dark overlay for better text contrast -->
+    </div>
+    
+    <!-- Content Container -->
+    <div class="container mx-auto relative z-10 h-full flex items-center">
+        <div class="text-white max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Health, Our Priority</h1>
+            <p class="text-lg md:text-xl mb-8">Book appointments, explore services, and access world-class care in just a few clicks.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-orange text-white px-6 py-3 rounded-md hover:bg-amber-600 font-medium transition-colors">Book OPD Appointment</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-100 font-medium transition-colors">View Services</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Current Openings -->
+    <div class="container mx-auto px-4 py-12 max-w-8xl">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Current Openings</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Explore our available positions and find the perfect role that matches your skills and passion.</p>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="relative mb-10">
+            <input type="text" placeholder="Search jobs..." class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <i class="fas fa-search absolute left-3 top-3.5 text-gray-400"></i>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Job Listing 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-semibold text-gray-800">Staff Nurse – Emergency Ward</h2>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Full-time</span>
+                </div>
+                <div class="space-y-2 mb-4 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-building mr-2 text-blue-500 w-4"></i>
+                        <span>Nursing Department</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-500 w-4"></i>
+                        <span>Satobato Branch</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2 text-blue-500 w-4"></i>
+                        <span>Deadline: June 20, 2025</span>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        <i class="far fa-eye mr-2"></i> View Details
+                    </a>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center">
+                        <i class="fas fa-paper-plane mr-2"></i> Apply Now
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Job Listing 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-semibold text-gray-800">Medical Officer</h2>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Full-time</span>
+                </div>
+                <div class="space-y-2 mb-4 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-building mr-2 text-blue-500 w-4"></i>
+                        <span>Medical Department</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-500 w-4"></i>
+                        <span>Main Branch</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2 text-blue-500 w-4"></i>
+                        <span>Deadline: July 15, 2025</span>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        <i class="far fa-eye mr-2"></i> View Details
+                    </a>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center">
+                        <i class="fas fa-paper-plane mr-2"></i> Apply Now
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Job Listing 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-semibold text-gray-800">Administrative Assistant</h2>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Part-time</span>
+                </div>
+                <div class="space-y-2 mb-4 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-building mr-2 text-blue-500 w-4"></i>
+                        <span>Administration</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-500 w-4"></i>
+                        <span>Satobato Branch</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2 text-blue-500 w-4"></i>
+                        <span>Deadline: June 30, 2025</span>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        <i class="far fa-eye mr-2"></i> View Details
+                    </a>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center">
+                        <i class="fas fa-paper-plane mr-2"></i> Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Why Work With Us Section -->
+<section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Work With Us</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Join a team that values excellence, growth, and making a difference in people's lives.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Team Culture -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Team-Oriented Culture</h3>
+                <p class="text-gray-600">Work alongside dedicated professionals in a collaborative environment that values every team member.</p>
+            </div>
+
+            <!-- Learning & Growth -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Learning & Growth</h3>
+                <p class="text-gray-600">Continuous professional development opportunities and career advancement paths.</p>
+            </div>
+
+            <!-- Our Facilities -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-hospital text-blue-600 text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">State-of-the-art Facilities</h3>
+                <p class="text-gray-600">Work with the latest medical technology and equipment in modern, well-equipped facilities.</p>
+            </div>
+        </div>
+
+        <!-- Meet Our Team CTA -->
+        <div class="mt-16 text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Meet Our Team</h3>
+            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                View Employee Stories
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+    
+<!-- Footer -->
+<footer class="bg-dark text-white w-full">
+    <div class="mx-auto px-6 py-12 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Hospital Info -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Advance International Hospital</h3>
+                <p class="text-gray-300">Your Health, Our Priority. Providing world-class healthcare services with compassion and excellence.</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Find a Doctor</a></li>
+                </ul>
+            </div>
+            
+            <!-- Departments -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Departments</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cardiology</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Neurology</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Radiology</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Emergency</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                <address class="text-gray-300 not-italic">
+                    123 Medical Drive<br>
+                    Health City, HC 12345<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@advancehospital.com
+                </address>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 Advance International Hospital. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

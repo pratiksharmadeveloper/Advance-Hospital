@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Dr. Sushil Shrestha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A6D92',
+                        secondary: '#00A3C8',
+                        orange: '#F9B233',
+                        dark: '#202124',
+                        light: '#f8f9fa',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        danger: '#EF4444'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hidden-section {
+            display: none;
+        }
+        .file-upload {
+            border: 2px dashed #d1d5db;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+        .file-upload:hover {
+            border-color: #0A6D92;
+        }
+        .payment-option {
+            transition: all 0.2s ease;
+        }
+        .payment-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+<!-- Main Container -->
+<div class="bg-white min-h-screen flex flex-col">
+
+    <!-- Time Selection Section -->
+    <div id="time-selection-section" class="hidden-section flex-1">
+        <!-- Top Navigation Buttons -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="doctor.html" class="inline-flex items-center text-primary hover:text-blue-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                    </svg>
+                    Back to Find Doctor
+                </a>
+                
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="text-sm font-medium text-gray-700">Secure Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Progress Steps -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">1</div>
+                    <span class="mt-2 text-sm font-medium text-primary">Date & Time</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-medium">2</div>
+                    <span class="mt-2 text-sm font-medium text-gray-500">Patient Info</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-medium">3</div>
+                    <span class="mt-2 text-sm font-medium text-gray-500">Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Doctor Header -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mr-4">
+                    <img class="h-16 w-16 rounded-full object-cover" src="https://randomuser.me/api/portraits/men/42.jpg" alt="Dr. Sushil Shrestha">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">Dr. Sushil Shrestha, MD</h1>
+                    <p class="text-primary font-medium">Cardiology</p>
+                    
+                    <!-- Branch and Rating - Stacked Layout -->
+                    <div class="mt-2 space-y-1">
+                        <div class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Satabbato Branch</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex items-center text-yellow-600 mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="ml-1">4.8</span>
+                            </div>
+                            <span class="text-sm text-gray-500">(124 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Combined Booking Sections -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="border border-gray-200 rounded-lg p-6">
+                <!-- Date Selection -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Select Date & Time</h2>
+                    
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-800">Choose Date</h3>
+                        <div class="flex items-center space-x-2">
+                            <button id="prev-month" class="p-1 rounded-full hover:bg-gray-100 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <h3 id="current-month" class="text-lg font-medium text-gray-800"></h3>
+                            <button id="next-month" class="p-1 rounded-full hover:bg-gray-100 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Calendar will be generated by JavaScript -->
+                    <div id="calendar" class="overflow-x-auto"></div>
+                </div>
+
+                <!-- Time Selection -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">Available Time Slots</h3>
+                    
+                    <!-- Time Slot Filter Buttons -->
+                    <div class="flex space-x-2 mb-4">
+                        <button id="filter-morning" class="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium transition-colors">
+                            Morning
+                        </button>
+                        <button id="filter-afternoon" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md text-sm font-medium transition-colors">
+                            Afternoon
+                        </button>
+                        <button id="filter-evening" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md text-sm font-medium transition-colors">
+                            Evening
+                        </button>
+                    </div>
+                    
+                    <!-- Time Slots Container -->
+                    <div id="time-slots-container">
+                        <!-- Morning Slots -->
+                        <div class="morning-slots grid grid-cols-2 gap-2">
+                            <button class="time-slot w-full py-2 px-3 bg-green-50 hover:bg-green-100 border border-green-200 text-green-800 rounded text-sm transition-colors" data-time="morning" data-original-text="9:00 AM Available">
+                                9:00 AM Available
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-green-50 hover:bg-green-100 border border-green-200 text-green-800 rounded text-sm transition-colors" data-time="morning" data-original-text="9:30 AM Available">
+                                9:30 AM Available
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-primary text-white rounded text-sm" data-time="morning" data-original-text="10:00 AM Selected">
+                                10:00 AM Selected
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-gray-100 border border-gray-200 text-gray-500 rounded text-sm cursor-not-allowed" data-time="morning" disabled>
+                                10:30 AM Booked
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 text-yellow-800 rounded text-sm transition-colors" data-time="morning" data-original-text="11:00 AM Limited">
+                                11:00 AM Limited
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-green-50 hover:bg-green-100 border border-green-200 text-green-800 rounded text-sm transition-colors" data-time="morning" data-original-text="11:30 AM Available">
+                                11:30 AM Available
+                            </button>
+                        </div>
+                        
+                        <!-- Afternoon Slots  -->
+                        <div class="afternoon-slots grid grid-cols-2 gap-2" style="display: none;">
+                            <button class="time-slot w-full py-2 px-3 bg-green-50 hover:bg-green-100 border border-green-200 text-green-800 rounded text-sm transition-colors" data-time="afternoon" data-original-text="1:00 PM Available">
+                                1:00 PM Available
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-gray-100 border border-gray-200 text-gray-500 rounded text-sm cursor-not-allowed" data-time="afternoon" disabled>
+                                1:30 PM Booked
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-green-50 hover:bg-green-100 border border-green-200 text-green-800 rounded text-sm transition-colors" data-time="afternoon" data-original-text="2:00 PM Available">
+                                2:00 PM Available
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-gray-100 border border-gray-200 text-gray-500 rounded text-sm cursor-not-allowed" data-time="afternoon" disabled>
+                                2:30 PM Booked
+                            </button>
+                        </div>
+                        
+                        <!-- Evening Slots  -->
+                        <div class="evening-slots grid grid-cols-2 gap-2" style="display: none;">
+                            <button class="time-slot w-full py-2 px-3 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 text-yellow-800 rounded text-sm transition-colors" data-time="evening" data-original-text="4:00 PM Limited">
+                                4:00 PM Limited
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-green-50 hover:bg-green-100 border border-green-200 text-green-800 rounded text-sm transition-colors" data-time="evening" data-original-text="4:30 PM Available">
+                                4:30 PM Available
+                            </button>
+                            <button class="time-slot w-full py-2 px-3 bg-gray-100 border border-gray-200 text-gray-500 rounded text-sm cursor-not-allowed" data-time="evening" disabled>
+                                5:00 PM Booked
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Booking -->
+                <div class="border-t border-gray-200 pt-6">
+                    <button class="flex items-center text-primary font-medium hover:text-blue-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Book ASAP (Emergency/Walk-in)
+                        <span class="ml-2 text-sm text-gray-500">Next available slot will be assigned</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Continue Button -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <button onclick="showPatientInfo()" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
+                Continue to Patient Info
+            </button>
+        </div>
+    </div>
+
+    <!-- Patient Information Section -->
+    <div id="patient-info-section" class="hidden-section flex-1">
+        <!-- Top Navigation Buttons -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <button onclick="showTimeSelection()" class="inline-flex items-center text-primary hover:text-blue-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                    </svg>
+                    Back
+                </button>
+                
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="text-sm font-medium text-gray-700">Secure Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Progress Steps -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">1</div>
+                    <span class="mt-2 text-sm font-medium text-gray-500">Date & Time</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">2</div>
+                    <span class="mt-2 text-sm font-medium text-primary">Patient Info</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-medium">3</div>
+                    <span class="mt-2 text-sm font-medium text-gray-500">Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Patient Form -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="border border-gray-200 rounded-lg p-6">
+                <h1 class="text-2xl font-bold text-gray-900 mb-6">Patient Details</h1>
+                
+                <form id="patient-form" class="space-y-6">
+                    <!-- Full Name -->
+                    <div>
+                        <label for="full-name" class="block text-sm font-medium text-gray-700 mb-1">
+                            Full Name <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="full-name" placeholder="Enter patient name" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
+                    
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                            Phone Number <span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" id="phone" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" placeholder="email@example.com" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    
+                    <!-- Age and Gender Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Age -->
+                        <div>
+                            <label for="age" class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                            <input type="number" id="age" min="1" max="120" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <!-- Gender -->
+                        <div>
+                            <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                            <select id="gender" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="" selected disabled>Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Reason for Visit -->
+                    <div>
+                        <label for="reason" class="block text-sm font-medium text-gray-700 mb-1">
+                            Reason for Visit
+                        </label>
+                        <textarea id="reason" rows="3" placeholder="Describe your symptoms or reason for consultation" 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <!-- Upload Report -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            Upload Report (Optional)
+                        </label>
+                        <div class="file-upload mt-1 flex justify-center px-6 pt-5 pb-6 rounded-md">
+                            <div class="space-y-1 text-center">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <div class="flex text-sm text-gray-600">
+                                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-blue-500 focus-within:outline-none">
+                                        <span>Click to upload</span>
+                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-500">PDF, JPG, PNG up to 10MB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Continue Button -->
+                    <div class="pt-4">
+                        <button type="button" onclick="showPaymentSection()" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
+                            Continue to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="payment-section" class="hidden-section flex-1">
+        <!-- Top Navigation Buttons -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <button onclick="showPatientInfo()" class="inline-flex items-center text-primary hover:text-blue-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                    </svg>
+                    Back
+                </button>
+                
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="text-sm font-medium text-gray-700">Secure Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Progress Steps -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">1</div>
+                    <span class="mt-2 text-sm font-medium text-gray-500">Date & Time</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">2</div>
+                    <span class="mt-2 text-sm font-medium text-gray-500">Patient Info</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">3</div>
+                    <span class="mt-2 text-sm font-medium text-primary">Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t border-gray-200"></div>
+
+        <!-- Payment Options -->
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="border border-gray-200 rounded-lg p-6">
+                <h1 class="text-2xl font-bold text-gray-900 mb-6">Payment Options</h1>
+                
+                <!-- Payment Methods -->
+                <div class="space-y-4 mb-8">
+                    <div class="payment-option border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="font-medium text-gray-900">Pay Online</h3>
+                                <p class="text-sm text-gray-500">eSewa, Khalti, FonePay, Visa, Mastercard</p>
+                            </div>
+                            <span class="font-medium">¥500</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-option border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="font-medium text-gray-900">Pay at Hospital</h3>
+                                <p class="text-sm text-gray-500">Pay during your visit</p>
+                            </div>
+                            <span class="font-medium">¥500</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-option border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="font-medium text-gray-900">Insurance</h3>
+                                <p class="text-sm text-gray-500">Use your insurance coverage</p>
+                            </div>
+                            <span class="font-medium text-green-600">Covered</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo Code -->
+                <div class="mb-6">
+                    <label for="promo-code" class="block text-sm font-medium text-gray-700 mb-1">Enter promo code</label>
+                    <div class="flex">
+                        <input type="text" id="promo-code" class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button class="px-4 py-2 bg-primary text-white rounded-r-md hover:bg-blue-700 transition-colors">Apply</button>
+                    </div>
+                </div>
+                
+                <!-- Summary -->
+                <div class="border-t border-gray-200 pt-4">
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Consultation Fee</span>
+                            <span class="font-medium">¥500</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Platform Fee</span>
+                            <span class="font-medium">¥25</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Discount</span>
+                            <span class="font-medium text-green-600">-¥25</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-3 flex justify-between">
+                        <span class="font-bold">Total</span>
+                        <span class="font-bold">¥500</span>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="mt-8 flex space-x-4">
+                    <button onclick="showPatientInfo()" class="flex-1 py-2 px-4 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                        Save as Draft
+                    </button>
+                    <button onclick="window.location.href='index.html'" class="flex-1 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
+                        Confirm Booking
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-50 py-4 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-600">
+                Need help? <a href="tel:+1234567890" class="text-primary hover:underline">Call Support</a> 
+                <span class="mx-2">•</span> 
+                <a href="https://wa.me/1234567890" class="text-primary hover:underline">WhatsApp</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Calendar functionality
+    let currentDate = new Date();
+    let selectedDate = new Date(); 
+    
+    // Mark today as selected initially
+    selectedDate.setHours(0, 0, 0, 0);
+
+    // DOM elements
+    const calendarEl = document.getElementById('calendar');
+    const currentMonthEl = document.getElementById('current-month');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    
+    // Time slot filter elements
+    const filterMorningBtn = document.getElementById('filter-morning');
+    const filterAfternoonBtn = document.getElementById('filter-afternoon');
+    const filterEveningBtn = document.getElementById('filter-evening');
+    
+    // Time slot groups
+    const morningSlots = document.querySelector('.morning-slots');
+    const afternoonSlots = document.querySelector('.afternoon-slots');
+    const eveningSlots = document.querySelector('.evening-slots');
+
+    // Initialize with morning time slots visible
+    let currentFilter = 'morning';
+
+    // Render calendar
+    function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        
+        // Set current month header
+        currentMonthEl.textContent = new Date(year, month).toLocaleDateString('en-US', {
+            month: 'long',
+            year: 'numeric'
+        });
+
+        // Get first and last days of month
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        
+        // Get days in month
+        const daysInMonth = lastDay.getDate();
+        
+        // Get starting day of week (0-6)
+        const startingDay = firstDay.getDay();
+        
+        // Create calendar HTML
+        let calendarHTML = `
+            <table class="w-full">
+                <thead>
+                    <tr class="text-gray-500 text-sm">
+                        <th class="py-2">Sun</th>
+                        <th class="py-2">Mon</th>
+                        <th class="py-2">Tue</th>
+                        <th class="py-2">Wed</th>
+                        <th class="py-2">Thu</th>
+                        <th class="py-2">Fri</th>
+                        <th class="py-2">Sat</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+        `;
+        
+        let day = 1;
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        for (let i = 0; i < 6; i++) {
+            // Stop if we've rendered all days
+            if (day > daysInMonth) break;
+            
+            calendarHTML += '<tr>';
+            
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < startingDay) {
+                    // Days from previous month
+                    const prevDate = new Date(year, month, 0 - (startingDay - j - 1));
+                    calendarHTML += `<td class="py-3 text-gray-400">${prevDate.getDate()}</td>`;
+                } else if (day > daysInMonth) {
+                    // Days from next month
+                    const nextDate = new Date(year, month + 1, day - daysInMonth);
+                    calendarHTML += `<td class="py-3 text-gray-400">${nextDate.getDate()}</td>`;
+                    day++;
+                } else {
+                    // Current month days
+                    const date = new Date(year, month, day);
+                    const isToday = date.getTime() === today.getTime();
+                    const isSelected = selectedDate && date.getTime() === selectedDate.getTime();
+                    const isPast = date < today;
+                    
+                    let cellClass = 'py-3 cursor-pointer hover:bg-gray-50 transition-colors';
+                    if (isToday) cellClass += ' font-bold text-primary';
+                    if (isSelected) cellClass += ' bg-primary text-white rounded-full';
+                    if (isPast) cellClass += ' text-gray-400 cursor-not-allowed hover:bg-transparent';
+                    
+                    calendarHTML += `
+                        <td class="${cellClass}" data-date="${date.toISOString()}" ${isPast ? 'disabled' : ''}>
+                            ${day}
+                        </td>
+                    `;
+                    day++;
+                }
+            }
+            
+            calendarHTML += '</tr>';
+        }
+        
+        calendarHTML += `
+                </tbody>
+            </table>
+        `;
+        
+        calendarEl.innerHTML = calendarHTML;
+        
+        // Add click event to date cells
+        document.querySelectorAll('td[data-date]:not([disabled])').forEach(cell => {
+            cell.addEventListener('click', function() {
+                selectedDate = new Date(this.getAttribute('data-date'));
+                renderCalendar();
+            });
+        });
+    }
+    
+    // Filter time slots based on selected filter
+    function filterTimeSlots(filter) {
+        currentFilter = filter;
+        
+        // Reset all filter buttons to default state
+        filterMorningBtn.classList.remove('bg-primary', 'text-white');
+        filterMorningBtn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+        
+        filterAfternoonBtn.classList.remove('bg-primary', 'text-white');
+        filterAfternoonBtn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+        
+        filterEveningBtn.classList.remove('bg-primary', 'text-white');
+        filterEveningBtn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+        
+        // Set active button
+        if (filter === 'morning') {
+            filterMorningBtn.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+            filterMorningBtn.classList.add('bg-primary', 'text-white');
+        } else if (filter === 'afternoon') {
+            filterAfternoonBtn.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+            filterAfternoonBtn.classList.add('bg-primary', 'text-white');
+        } else if (filter === 'evening') {
+            filterEveningBtn.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+            filterEveningBtn.classList.add('bg-primary', 'text-white');
+        }
+        
+        // Show/hide time slots based on filter
+        if (filter === 'morning') {
+            morningSlots.style.display = 'grid';
+            afternoonSlots.style.display = 'none';
+            eveningSlots.style.display = 'none';
+        } else if (filter === 'afternoon') {
+            morningSlots.style.display = 'none';
+            afternoonSlots.style.display = 'grid';
+            eveningSlots.style.display = 'none';
+        } else if (filter === 'evening') {
+            morningSlots.style.display = 'none';
+            afternoonSlots.style.display = 'none';
+            eveningSlots.style.display = 'grid';
+        }
+    }
+    
+    // Month navigation
+    prevMonthBtn.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+    });
+    
+    nextMonthBtn.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+    });
+    
+    // Time slot filter buttons
+    filterMorningBtn.addEventListener('click', () => filterTimeSlots('morning'));
+    filterAfternoonBtn.addEventListener('click', () => filterTimeSlots('afternoon'));
+    filterEveningBtn.addEventListener('click', () => filterTimeSlots('evening'));
+    
+    // Time slot selection
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('time-slot') && !e.target.disabled) {
+            // Remove selected state from all buttons
+            document.querySelectorAll('.time-slot').forEach(btn => {
+                if (btn !== e.target && !btn.disabled) {
+                    btn.classList.remove('bg-primary', 'text-white', 'hover:bg-blue-700');
+                    
+                    // Reset to original state based on availability
+                    if (btn.classList.contains('bg-yellow-50')) {
+                        btn.classList.add('bg-yellow-50', 'hover:bg-yellow-100', 'text-yellow-800');
+                        btn.textContent = btn.getAttribute('data-original-text');
+                    } else {
+                        btn.classList.add('bg-green-50', 'hover:bg-green-100', 'text-green-800');
+                        btn.textContent = btn.getAttribute('data-original-text');
+                    }
+                }
+            });
+            
+            // Set selected state for clicked button
+            e.target.classList.remove('bg-green-50', 'hover:bg-green-100', 'text-green-800', 'bg-yellow-50', 'hover:bg-yellow-100', 'text-yellow-800');
+            e.target.classList.add('bg-primary', 'text-white', 'hover:bg-blue-700');
+            
+            // Update button text
+            const timeText = e.target.textContent.split(' ')[0];
+            e.target.textContent = `${timeText} Selected`;
+        }
+    });
+
+    // Function to show patient info section
+    function showPatientInfo() {
+        document.getElementById('time-selection-section').classList.add('hidden-section');
+        document.getElementById('payment-section').classList.add('hidden-section');
+        document.getElementById('patient-info-section').classList.remove('hidden-section');
+    }
+    
+    // Function to show time selection section
+    function showTimeSelection() {
+        document.getElementById('patient-info-section').classList.add('hidden-section');
+        document.getElementById('payment-section').classList.add('hidden-section');
+        document.getElementById('time-selection-section').classList.remove('hidden-section');
+    }
+    
+    // Function to show payment section
+    function showPaymentSection() {
+        // Validate form first
+        const form = document.getElementById('patient-form');
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+        
+        document.getElementById('time-selection-section').classList.add('hidden-section');
+        document.getElementById('patient-info-section').classList.add('hidden-section');
+        document.getElementById('payment-section').classList.remove('hidden-section');
+    }
+    
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+        renderCalendar();
+        filterTimeSlots('morning');
+        showTimeSelection(); // Start with time selection
+    });
+</script>
+</body>
+</html>
